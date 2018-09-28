@@ -23,7 +23,7 @@ headers = {
 
 def save_artist(group_id, initial):
     params = {'id': group_id, 'initial': initial}
-    r = requests.get('http://music.163.com/discover/artist/cat',headers=headers, params=params)
+    r = requests.get('http://music.163.com/discover/artist/cat', headers=headers, params=params)
 
     # 网页解析
     soup = BeautifulSoup(r.content.decode(), 'html.parser')
