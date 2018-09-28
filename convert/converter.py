@@ -1,46 +1,31 @@
-from __future__ import print_function
+# coding:utf8
+import rdflib
 
-import os
-import subprocess
+# graph = rdflib.Graph('Sleepycat')
 
+# first time create the store:
+# graph.open('myRDFLibStore.rdf', create = True)
 
-class PyRDF2Ntriples(object):
-    def __init__(self):
-        pass
+graph = rdflib.Graph()
 
-    def convertTTL2NT(self, filepath):
-        #Save to the same folder with .nt extension
-        (outputDir, outputFile) = os.path.split(os.path.abspath(filepath))
-        outputFile = outputFile.split(".")[0] + ".nt"
-        outputPath = os.path.join(outputDir, outputFile)
-        self.serdiTTL2NT(filepath, outputPath)
+s = rdflib.URIRef('牛膝')
+p = rdflib.URIRef('功效属性')
+o = rdflib.URIRef('活血')
 
-    def serdiTTL2NT(self, inpath, outpath):
-        serdiCommand = "serdi -i turtle -o ntriples -b -q %s" % (inpath)
-        p = self.execute(serdiCommand)
-        f = open(outpath, "wb+")
-        for line in p.stdout.readlines():
-            print(line, file=f, end="")
-        f.close()
+graph.add((s, p, o))
+# 以n3格式存储
+graph.serialize('zhongyao.rdf', format='n3')
 
-    def executeRapper(self, inpath, outpath, serialization):
-        pass
+s = rdflib.URIRef('http://www.example.org/牛膝')
+p = rdflib.URIRef('http://www.example.org/功效属性')
+o = rdflib.URIRef('http://www.example.org/活血')
 
-    def execute(self, command):
-        p = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        return p
+g1 = rdflib.Graph()
+g1.add((s, p, o))
+g1.serialize('zhongyao1.rdf')  # 默认以'xml'格式存储
 
-if __name__ == "__main__":
-    currentPath = os.path.dirname(os.path.realpath(__file__))
-    testTtlPath = os.path.abspath(os.path.join(currentPath, "../test/data/test.ttl"))
-
-    #instantiate class
-    rdf2nt = PyRDF2Ntriples()
-
-    #Test Ttl to nt conversion
-    rdf2nt.convertTTL2NT(testTtlPath)
-
-    
-
-    import ipdb; ipdb.set_trace()
-    print("pass")
+g2 = rdflib.Graph()
+g2.parse('zhongyao1.rdf', format='xml')  # 解析rdf文件时，需要指定格式
+subject = g2.subjects(p, o)
+for i in subject:
+	print(i)
