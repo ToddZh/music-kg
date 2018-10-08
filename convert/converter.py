@@ -38,7 +38,6 @@ class converte(object):
 		graph_.parse(graph, format=graph_format)
 		self.show(graph_)
 
-	# 读取大文件有问题
 	def xml2nt(self, graph, graph_format, graph_save, graph_save_format):
 		graph_ = rdflib.Graph()
 		graph_.parse(graph, format=graph_format)
@@ -83,6 +82,7 @@ if __name__ == "__main__":
 	# objects = ['谁的年轻 不曾是骄傲 可又多少无畏骄傲 在风雨中衰老 谁的天空 不曾有痴狂 可又多少年少痴狂 在岁月中苍凉 在妥协中奔忙 在诱惑前迷茫 你温软的微笑 给我昂起头颅的力量 向梦想出发 绽放青春的花 即使不会到达 谁又会在乎 为梦想坚持 就是最真勇士 即使不会到达 谁又会在乎 走我们的路 时光坚硬 梦想如此柔软 现实太泥泞 不断跌倒 不断跌倒 还继续吗 在妥协中奔忙 在诱惑前迷茫 你温暖的微笑 给我昂起头颅的力量 向梦想出发 绽青春的花 心中不灭希望 是指引方向的光 为梦想坚持 就是最真勇士 即使不会到达 谁又会在乎 走我们的路 梦想的路 向梦想出发 绽青春的花 心中不灭希望 是指引方向的光 为梦想坚持 就是最真勇士 即使不会到达 谁又会在乎 走我们的路 梦想的路 走我们的路 梦想的路 走我们的路'
 	# 	, '533832', '78', '电影《与时尚同居》主题曲', '20', '我们的路', 'song #533832', '我们的路'
 	# 		   , '徐闻 尹丽川', '菊地圭介']
+
 	## 保存 rdf
 	# converter.saveGraphXML('../test/data/zhutong.rdf', "533832", predicates, converter.removeBlank(objects))
 	# converter.saveGraphNT('../test/data/zhutong.nt', "533832", predicates, converter.removeBlank(objects))

@@ -21,39 +21,13 @@ headers = {
 }
 
 
-def save_artist(group_id, initial):
-    params = {'id': group_id, 'initial': initial}
-    r = requests.get('http://music.163.com/discover/artist/cat', headers=headers, params=params)
 
-    # 网页解析
-    soup = BeautifulSoup(r.content.decode(), 'html.parser')
-    body = soup.body
-
-    hot_artists = soup.find_all('a', attrs={'class': 'msk'})
-    artists = body.find_all('a', attrs={'class': 'nm nm-icn f-thide s-fc0'})
-
-    for artist in hot_artists:
-        artist_id = artist['href'].replace('/artist?id=', '').strip()
-        artist_name = artist['title'].replace('的音乐', '')
-        try:
-            sql.insert_artist(artist_id, artist_name)
-        except Exception as e:
-            # 打印错误日志
-            print(e)
-
-    for artist in artists:
-        artist_id = artist['href'].replace('/artist?id=', '').strip()
-        artist_name = artist['title'].replace('的音乐', '')
-        try:
-            sql.insert_artist(artist_id, artist_name)
-        except Exception as e:
-            # 打印错误日志
-            print(e)
 
 
 # gg = 4003
 # save_artist(gg, 0)
-id_range = [1001,1002,1003,2001,2002,2003,6001,6002,6003,7001,7002,7003,4001,4002,4003]
+# id_range = [1001, 1002, 1003, 2001, 2002, 2003, 6001, 6002, 6003, 7001, 7002, 7003, 4001, 4002, 4003]
+id_range = [1001, 1002, 1003]
 for i in range(65, 91):
     for j in id_range:
         save_artist(j, i)
