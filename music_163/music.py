@@ -5,6 +5,7 @@
 import requests
 from bs4 import BeautifulSoup
 import time
+from music_163 import save_as_json
 
 class Music(object):
     headers = {
@@ -21,6 +22,22 @@ class Music(object):
         'Upgrade-Insecure-Requests': '1',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
     }
+    def save_albums(self, artist_id):
+        params = {'id': artist_id, 'limit': '200'}
+        # 获取歌手个人主页
+        r = requests.get('http://music.163.com/artist/album', headers=self.headers, params=params)
+
+        # 网页解析
+        soup = BeautifulSoup(r.content.decode(), 'html.parser')
+        body = soup.body
+
+        albums = body.find_all('a', attrs={'class': 'tit f-thide s-fc0'})  # 获取所有专辑
+
+
+        for album in albums:
+            albume_id = album['href'].replace('/album?id=', '')
+            # sql.insert_album(albume_id, artist_id)
+
 
     def save_artist(self, group_id, initial):
         params = {'id': group_id, 'initial': initial}
@@ -38,8 +55,9 @@ class Music(object):
             artist_name = artist['title'].replace('的音乐', '')
             try:
                 # 根据 artist_id 与 artist_name 进行专辑爬取
-
-                pass
+                save_as_json.save_entity(artist_name)
+                message = self.save_albums(artist_id)
+                save_as_json.add_json(message)
             except Exception as e:
                 # 打印错误日志
                 print(e)
@@ -48,7 +66,9 @@ class Music(object):
             artist_id = artist['href'].replace('/artist?id=', '').strip()
             artist_name = artist['title'].replace('的音乐', '')
             try:
-                pass
+                save_as_json.save_entity(artist_name)
+                message = self.save_albums(artist_id)
+                save_as_json.add_json(message)
                 # sql.insert_artist(artist_id, artist_name)
             except Exception as e:
                 # 打印错误日志
