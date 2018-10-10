@@ -22,22 +22,6 @@ class Music(object):
         'Upgrade-Insecure-Requests': '1',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
     }
-    def save_albums(self, artist_id):
-        params = {'id': artist_id, 'limit': '200'}
-        # 获取歌手个人主页
-        r = requests.get('http://music.163.com/artist/album', headers=self.headers, params=params)
-
-        # 网页解析
-        soup = BeautifulSoup(r.content.decode(), 'html.parser')
-        body = soup.body
-
-        albums = body.find_all('a', attrs={'class': 'tit f-thide s-fc0'})  # 获取所有专辑
-
-
-        for album in albums:
-            albume_id = album['href'].replace('/album?id=', '')
-            # sql.insert_album(albume_id, artist_id)
-
 
     def save_artist(self, group_id, initial):
         params = {'id': group_id, 'initial': initial}
@@ -57,7 +41,11 @@ class Music(object):
                 # 根据 artist_id 与 artist_name 进行专辑爬取
                 save_as_json.save_entity(artist_name)
                 message = self.save_albums(artist_id)
+                if message == "":
+                    continue
+                message = artist_id + ":{\"艺术家\":" + "\"" + artist_name + "\"" + "," + message + "}"
                 save_as_json.add_json(message)
+                print(message)
             except Exception as e:
                 # 打印错误日志
                 print(e)
@@ -68,16 +56,46 @@ class Music(object):
             try:
                 save_as_json.save_entity(artist_name)
                 message = self.save_albums(artist_id)
+                if message == "":
+                    continue
+                message = artist_id + ":{\"艺术家\":" + "\"" + artist_name + "\"" + "," + message + "}"
                 save_as_json.add_json(message)
+                print(message)
                 # sql.insert_artist(artist_id, artist_name)
             except Exception as e:
                 # 打印错误日志
                 print(e)
 
+    def save_albums(self, artist_id):
+        params = {'id': artist_id, 'limit': '200'}
+        # 获取歌手个人主页
+        r = requests.get('http://music.163.com/artist/album', headers=self.headers, params=params)
+
+        # 网页解析
+        soup = BeautifulSoup(r.content.decode(), 'html.parser')
+        body = soup.body
+
+        albums = body.find_all('a', attrs={'class': 'tit s-fc0'})  # 获取所有专辑
+
+        albums_result = ""
+        for album in albums:
+            albume_id = album['href'].replace('/album?id=', '')
+            albums_name = album.getText()
+            save_as_json.save_entity(albums_name)
+            message = self.save_music(albume_id)
+            if albums_result == "":
+                albums_result += albume_id + ":{\"专辑名\":" + "\"" + albums_name + "\""+ "," + message + "}"
+            else:
+                albums_result += "," + albume_id + ":{\"专辑名\":" + "\"" + albums_name + "\"" + "," + message + "}"
+
+            # sql.insert_album(albume_id, artist_id)
+        print(albums_result)
+        return albums_result
+
     def save_music(self, album_id):
         params = {'id': album_id}
         # 获取专辑对应的页面
-        r = requests.get('http://music.163.com/artist/album', headers=self.headers, params=params)
+        r = requests.get('http://music.163.com/album', headers=self.headers, params=params)
 
         # 网页解析
         soup = BeautifulSoup(r.content.decode(), 'html.parser')
@@ -85,12 +103,19 @@ class Music(object):
 
         musics = body.find('ul', attrs={'class': 'f-hide'}).find_all('li')  # 获取专辑的所有音乐
 
+        music_result = ""
         for music in musics:
             music = music.find('a')
             music_id = music['href'].replace('/song?id=', '')
             music_name = music.getText()
-            f = open('../test/data/artists.txt', 'wb')
-            f.write(music_id + ":" + music_name)
+            save_as_json.save_entity(music_name)
+            if music_result == "":
+                music_result = "\"" + music_id + "\"" + ":{\"歌曲名\":" + "\"" + music_name + "\""+ "}"
+            else:
+                music_result += "," + "\"" + music_id + "\"" + ":{\"歌曲名\":" + "\"" + music_name + "\"" + "}"
+        print (music_result)
+        return music_result
+
 
 if __name__ == '__main__':
     id_range = [1001, 1002, 1003]
@@ -98,3 +123,4 @@ if __name__ == '__main__':
     for i in range(65, 91):
         for j in id_range:
             music.save_artist(j, i)
+

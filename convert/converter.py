@@ -3,6 +3,7 @@ import sys
 import json
 import re
 import rdflib
+import pprint
 
 class converte(object):
 	def __init__(self):
@@ -44,14 +45,13 @@ class converte(object):
 		graph_.serialize(graph_save, format=graph_save_format)
 		pass
 
-	def xml3json(self):
+	def xml2json(self):
 		pass
 
-	def show(self, graph):
+	def show(self,graph):
 		# 打印图的大小
 		print(len(graph))  # prints 2
 		# 遍历所有三元组
-		import pprint
 		for stmt in graph:
 			pprint.pprint(stmt)
 
