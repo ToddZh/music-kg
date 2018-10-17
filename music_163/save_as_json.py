@@ -41,14 +41,53 @@ def add_json(data):
 
 def save_entity(data):
     file = '../test/data/entity.txt'
-    if os.path.getsize(file):
-        # print('文件存在且不为空')
-        with codecs.open(file, 'a', 'utf-8') as f:
-            f.write('\n')
-            f.write(data)
+    if os.path.exists(file):
+        if os.path.getsize(file):
+            # print('文件存在且不为空')
+            with codecs.open(file, 'a', 'utf-8') as f:
+                f.write('\n')
+                f.write(data)
+        else:
+            # print('文件存在且为空')
+            with codecs.open(file, 'a', 'utf-8') as f:
+                f.write(data)
     else:
-        # print('文件存在且为空')
-        with codecs.open(file, 'a', 'utf-8') as f:
+        # print('文件不存在')
+        with codecs.open(file, 'w', 'utf-8') as f:
+            f.write(data)
+
+def save_entity_album(data):
+    file = '../test/data/entity_album.txt'
+    if os.path.exists(file):
+        if os.path.getsize(file):
+            # print('文件存在且不为空')
+            with codecs.open(file, 'a', 'utf-8') as f:
+                f.write('\n')
+                f.write(data)
+        else:
+            # print('文件存在且为空')
+            with codecs.open(file, 'a', 'utf-8') as f:
+                f.write(data)
+    else:
+        # print('文件不存在')
+        with codecs.open(file, 'w', 'utf-8') as f:
+            f.write(data)
+
+def save_entity_music(data):
+    file = '../test/data/entity_music.txt'
+    if os.path.exists(file):
+        if os.path.getsize(file):
+            # print('文件存在且不为空')
+            with codecs.open(file, 'a', 'utf-8') as f:
+                f.write('\n')
+                f.write(data)
+        else:
+            # print('文件存在且为空')
+            with codecs.open(file, 'a', 'utf-8') as f:
+                f.write(data)
+    else:
+        # print('文件不存在')
+        with codecs.open(file, 'w', 'utf-8') as f:
             f.write(data)
 
 if __name__ == '__main__':

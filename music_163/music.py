@@ -40,31 +40,31 @@ class Music(object):
             try:
                 # 根据 artist_id 与 artist_name 进行专辑爬取
                 save_as_json.save_entity(artist_name)
-                message = self.save_albums(artist_id)
-                if message == "":
-                    continue
-                message = artist_id + ":{\"艺术家\":" + "\"" + artist_name + "\"" + "," + message + "}"
-                save_as_json.add_json(message)
-                print(message)
+                # message = self.save_albums(artist_id)
+                # if message == "":
+                #     continue
+                # message = artist_id + ":{\"艺术家\":" + "\"" + artist_name + "\"" + "," + message + "}"
+                # save_as_json.add_json(message)
+                # print(message)
             except Exception as e:
                 # 打印错误日志
                 print(e)
 
-        for artist in artists:
-            artist_id = artist['href'].replace('/artist?id=', '').strip()
-            artist_name = artist['title'].replace('的音乐', '')
-            try:
-                save_as_json.save_entity(artist_name)
-                message = self.save_albums(artist_id)
-                if message == "":
-                    continue
-                message = artist_id + ":{\"艺术家\":" + "\"" + artist_name + "\"" + "," + message + "}"
-                save_as_json.add_json(message)
-                print(message)
-                # sql.insert_artist(artist_id, artist_name)
-            except Exception as e:
-                # 打印错误日志
-                print(e)
+        # for artist in artists:
+        #     artist_id = artist['href'].replace('/artist?id=', '').strip()
+        #     artist_name = artist['title'].replace('的音乐', '')
+        #     try:
+        #         save_as_json.save_entity(artist_name)
+        #         message = self.save_albums(artist_id)
+        #         if message == "":
+        #             continue
+        #         message = artist_id + ":{\"艺术家\":" + "\"" + artist_name + "\"" + "," + message + "}"
+        #         save_as_json.add_json(message)
+        #         print(message)
+        #         # sql.insert_artist(artist_id, artist_name)
+        #     except Exception as e:
+        #         # 打印错误日志
+        #         print(e)
 
     def save_albums(self, artist_id):
         params = {'id': artist_id, 'limit': '200'}

@@ -9,7 +9,14 @@ class converte(object):
 	def __init__(self):
 		pass
 
-	def saveGraphXML(self, graph, subjects, predicates, objects):
+	def saveGraph(self, graph, subjects, predicates, objects):
+		s = rdflib.URIRef('musicsong/' + subjects)
+		p = rdflib.URIRef(predicates)
+		o = rdflib.URIRef(objects)
+		graph.add((s, p, o))
+
+
+	def saveGraphXML(self, file, subjects, predicates, objects):
 		graph_ = rdflib.Graph()
 		for i, j in zip(predicates, objects):
 			s = rdflib.URIRef('musicsong/' + subjects)
@@ -18,9 +25,9 @@ class converte(object):
 			graph_.add((s, p, o))
 		# 以n3格式存储
 		# 默认以'xml'格式存储
-		graph_.serialize(graph, format='xml')
+		graph_.serialize(file, format='xml')
 
-	def saveGraphNT(self, graph, subjects, predicates, objects):
+	def saveGraphNT(self, file, subjects, predicates, objects):
 		graph_ = rdflib.Graph()
 		for i, j in zip(predicates, objects):
 			s = rdflib.URIRef('musicsong/' + subjects)
@@ -29,23 +36,27 @@ class converte(object):
 			graph_.add((s, p, o))
 		# 以n3格式存储
 		# 默认以'xml'格式存储
-		graph_.serialize(graph, format='nt')
+		graph_.serialize(file, format='nt')
 
-	def parseGraph(self, graph, graph_format):
+	def parseGraph(self, file, graph_format):
 		graph_ = rdflib.Graph()
 		'''
 		format: 'rdf/xml' 'xml', 'n3', 'nt', 'trix', 'rdfa'
 		'''
-		graph_.parse(graph, format=graph_format)
+		graph_.parse(file, format=graph_format)
 		self.show(graph_)
 
-	def xml2nt(self, graph, graph_format, graph_save, graph_save_format):
+	def xml2nt(self, file, graph_format, file_save, graph_save_format):
 		graph_ = rdflib.Graph()
-		graph_.parse(graph, format=graph_format)
-		graph_.serialize(graph_save, format=graph_save_format)
+		graph_.parse(file, format=graph_format)
+		graph_.serialize(file_save, format=graph_save_format)
 		pass
 
 	def xml2json(self):
+		pass
+
+	def musicjson2nt(self, json):
+		graph_ = rdflib.Graph()
 		pass
 
 	def show(self,graph):
