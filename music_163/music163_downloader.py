@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 from music_163 import save_as_json
+from kg import insert_to_neo4j
 
 class Music(object):
     headers = {
@@ -26,7 +27,6 @@ class Music(object):
     def save_artist(self, group_id, initial):
         params = {'id': group_id, 'initial': initial}
         r = requests.get('http://music.163.com/discover/artist/cat', headers=self.headers, params=params)
-
         # 网页解析
         soup = BeautifulSoup(r.content.decode(), 'html.parser')
         body = soup.body
@@ -34,65 +34,44 @@ class Music(object):
         hot_artists = soup.find_all('a', attrs={'class': 'msk'})
         artists = body.find_all('a', attrs={'class': 'nm nm-icn f-thide s-fc0'})
 
-        for artist in hot_artists:
+        graph = insert_to_neo4j.GraphNeo4j()
+
+        for artist in hot_artists + artists:
             artist_id = artist['href'].replace('/artist?id=', '').strip()
             artist_name = artist['title'].replace('的音乐', '')
             try:
                 # 根据 artist_id 与 artist_name 进行专辑爬取
-                save_as_json.save_entity(artist_name)
-                # message = self.save_albums(artist_id)
-                # if message == "":
-                #     continue
-                # message = artist_id + ":{\"艺术家\":" + "\"" + artist_name + "\"" + "," + message + "}"
-                # save_as_json.add_json(message)
-                # print(message)
+                data = artist_id + "$$" + artist_name
+                save_as_json.save_entity(data, '../test/data/entity_artist.txt')
+                graph.driver_add_properties(artist_name, "歌手", {"id":artist_id}, [])
             except Exception as e:
                 # 打印错误日志
                 print(e)
 
-        # for artist in artists:
-        #     artist_id = artist['href'].replace('/artist?id=', '').strip()
-        #     artist_name = artist['title'].replace('的音乐', '')
-        #     try:
-        #         save_as_json.save_entity(artist_name)
-        #         message = self.save_albums(artist_id)
-        #         if message == "":
-        #             continue
-        #         message = artist_id + ":{\"艺术家\":" + "\"" + artist_name + "\"" + "," + message + "}"
-        #         save_as_json.add_json(message)
-        #         print(message)
-        #         # sql.insert_artist(artist_id, artist_name)
-        #     except Exception as e:
-        #         # 打印错误日志
-        #         print(e)
 
-    def save_albums(self, artist_id):
+
+
+    def save_albums(self, artist_id, artist_name):
         params = {'id': artist_id, 'limit': '200'}
         # 获取歌手个人主页
         r = requests.get('http://music.163.com/artist/album', headers=self.headers, params=params)
-
         # 网页解析
         soup = BeautifulSoup(r.content.decode(), 'html.parser')
         body = soup.body
-
         albums = body.find_all('a', attrs={'class': 'tit s-fc0'})  # 获取所有专辑
-
-        albums_result = ""
         for album in albums:
             albume_id = album['href'].replace('/album?id=', '')
             albums_name = album.getText()
-            save_as_json.save_entity(albums_name)
-            message = self.save_music(albume_id)
-            if albums_result == "":
-                albums_result += albume_id + ":{\"专辑名\":" + "\"" + albums_name + "\""+ "," + message + "}"
-            else:
-                albums_result += "," + albume_id + ":{\"专辑名\":" + "\"" + albums_name + "\"" + "," + message + "}"
+            data = artist_name + "$$" + albume_id + "$$" + albums_name
+            try:
+                save_as_json.save_entity(data, '../test/data/entity_album.txt')
+                graph.driver_add_properties(albums_name, "专辑", {"id": albume_id}, [])
+                graph.driver_add_relation(artist_name, "歌手", "专辑", albums_name, "专辑")
+            except Exception as e:
+                # 打印错误日志
+                print(e)
 
-            # sql.insert_album(albume_id, artist_id)
-        print(albums_result)
-        return albums_result
-
-    def save_music(self, album_id):
+    def save_music(self, album_id, albums_name):
         params = {'id': album_id}
         # 获取专辑对应的页面
         r = requests.get('http://music.163.com/album', headers=self.headers, params=params)
@@ -100,21 +79,20 @@ class Music(object):
         # 网页解析
         soup = BeautifulSoup(r.content.decode(), 'html.parser')
         body = soup.body
-
         musics = body.find('ul', attrs={'class': 'f-hide'}).find_all('li')  # 获取专辑的所有音乐
-
-        music_result = ""
         for music in musics:
             music = music.find('a')
             music_id = music['href'].replace('/song?id=', '')
             music_name = music.getText()
-            save_as_json.save_entity(music_name)
-            if music_result == "":
-                music_result = "\"" + music_id + "\"" + ":{\"歌曲名\":" + "\"" + music_name + "\""+ "}"
-            else:
-                music_result += "," + "\"" + music_id + "\"" + ":{\"歌曲名\":" + "\"" + music_name + "\"" + "}"
-        print (music_result)
-        return music_result
+            data = albums_name + "$$" + music_id + "$$" + music_name
+            try:
+                save_as_json.save_entity(data, '../test/data/entity_music.txt')
+                graph.driver_add_properties(albums_name, "专辑", {"id": albume_id}, [])
+                graph.driver_add_relation(artist_name, "歌手", "专辑", albums_name, "专辑")
+            except Exception as e:
+                # 打印错误日志
+                print(e)
+
 
 
 if __name__ == '__main__':

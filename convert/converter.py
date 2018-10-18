@@ -9,6 +9,20 @@ class converte(object):
 	def __init__(self):
 		pass
 
+	def outputPredicateObjects(self,file, graph_format,subjects):
+		graph = self.parseGraph(file,graph_format)
+		# self.show(graph)
+		s = rdflib.URIRef('http://www.unisound.com/knowledge_graph/musicsong_tag/429904')
+		predicate_objects = graph.predicate_objects(s)
+		# subject_predicates = graph.subject_predicates(401597)
+		# objects = graph.objects(subjects,"401597")
+		for stmt in predicate_objects:
+			pprint.pprint(stmt)
+			p = stmt[0]
+			o = stmt[1]
+			print(str(p))
+
+
 	def saveGraph(self, graph, subjects, predicates, objects):
 		s = rdflib.URIRef('musicsong/' + subjects)
 		p = rdflib.URIRef(predicates)
@@ -44,7 +58,8 @@ class converte(object):
 		format: 'rdf/xml' 'xml', 'n3', 'nt', 'trix', 'rdfa'
 		'''
 		graph_.parse(file, format=graph_format)
-		self.show(graph_)
+		# self.show(graph_)
+		return graph_
 
 	def xml2nt(self, file, graph_format, file_save, graph_save_format):
 		graph_ = rdflib.Graph()
@@ -80,7 +95,8 @@ class converte(object):
 if __name__ == "__main__":
 	# instantiate class
 	converter = converte()
-	converter.xml2nt("../test/data/musicknowledgegraph.rdf", "xml", "../test/data/musicknowledgegraph.nt", "nt")
+	# converter.xml2nt("../test/data/musicknowledgegraph.rdf", "xml", "../test/data/musicknowledgegraph.nt", "nt")
+	converter.outputPredicateObjects("../test/data/musicknowledgegraph.rdf", "xml", "musicalbum/39375")
 
 	# predicates = ['song_lyric', 'song_id', 'song_recommends', 'song_sub_title', 'song_comments'
 	# 	, 'song_original_name', 'label', 'song_name']

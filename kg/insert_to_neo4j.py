@@ -108,7 +108,7 @@ class GraphNeo4j(object):
         title_node = data['title_node']
         introduction_node = data['introduction_node']
         basic_node = data['basic_node']
-        music_album_node = data['music_album_node']
+        music_node = data['music_node']
 
         self.driver_add_properties(title_node,'专辑', {'简介':introduction_node}, [])
         for key,value in basic_node.items():
@@ -123,7 +123,7 @@ class GraphNeo4j(object):
                 self.driver_add_properties(title_node, '专辑', {key:value_string[:-1]}, [])
             else:
                 self.driver_add_properties(title_node, '专辑', {key:value[0]}, [])
-        for i in music_album_node:
+        for i in music_node:
             self.driver_add_relation(title_node, '专辑', '歌曲', i, '歌曲')
 
     def add_music_node(self, data):

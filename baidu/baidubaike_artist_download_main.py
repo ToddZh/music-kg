@@ -6,27 +6,28 @@ from kg import insert_to_neo4j
 
 
 if __name__ == '__main__':
-    # data = html_downloader.baidubaike_download('阿杜','artist')
-    # neo4j = insert_to_neo4j.GraphNeo4j()
-    # neo4j.add_artist_node(data)
+    data = html_downloader.baidubaike_download('预谋邂逅','album')
     neo4j = insert_to_neo4j.GraphNeo4j()
+    neo4j.add_artist_node(data)
+
+    # neo4j = insert_to_neo4j.GraphNeo4j()
 
     # 爬取歌手信息
-    with codecs.open('../test/data/entity.txt', 'r','utf-8') as f:
-        line = f.readline().strip()
-        while line:
-            if len(line) == 0:
-                continue
-            print(line)
-            try:
-                data = html_downloader.baidubaike_download(line, 'artist')
-                if data == True:
-                    pass
-                else:
-                    neo4j.add_artist_node(data)
-            except Exception as e:
-                print(e)
-            line = f.readline().strip()
+    # with codecs.open('../test/data/entity.txt', 'r','utf-8') as f:
+    #     line = f.readline().strip()
+    #     while line:
+    #         if len(line) == 0:
+    #             continue
+    #         print(line)
+    #         try:
+    #             data = html_downloader.baidubaike_download(line, 'artist')
+    #             if data == True:
+    #                 pass
+    #             else:
+    #                 neo4j.add_artist_node(data)
+    #         except Exception as e:
+    #             print(e)
+    #         line = f.readline().strip()
         # file = "../test/data/baiduEntityAPI.rdf"
         # graph.serialize(file, format='nt')
 

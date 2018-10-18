@@ -39,8 +39,8 @@ def add_json(data):
             f.write(json_str)
 
 
-def save_entity(data):
-    file = '../test/data/entity.txt'
+def save_entity(data, file):
+    # file = '../test/data/entity.txt'
     if os.path.exists(file):
         if os.path.getsize(file):
             # print('文件存在且不为空')
