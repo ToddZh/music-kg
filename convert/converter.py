@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
 import sys
+import codecs
+import os
 import json
 import re
 import rdflib
@@ -37,9 +39,35 @@ class converte(object):
 			p = rdflib.URIRef("http://www.zhutong.com/knowledge_graph/vocab/" + i)
 			o = rdflib.URIRef(j)
 			graph_.add((s, p, o))
-		# 以n3格式存储
 		# 默认以'xml'格式存储
 		graph_.serialize(file, format='xml')
+
+	def saveGraphN3(self, file, subjects, predicates, objects):
+		if os.path.exists(file):
+			graph_ = rdflib.Graph()
+			graph_.parse(file, format='n3')
+
+			s = rdflib.URIRef(subjects)
+			p = rdflib.URIRef(predicates)
+			o = rdflib.URIRef(objects)
+			graph_.add((s, p, o))
+			# 以n3格式存储
+			graph_.serialize(file, format='n3')
+		else:
+			# print('文件不存在')
+			with codecs.open(file, 'w', 'utf-8') as f:
+				graph_ = rdflib.Graph()
+				graph_.parse(file, format='n3')
+
+				s = rdflib.URIRef(subjects)
+				p = rdflib.URIRef(predicates)
+				o = rdflib.URIRef(objects)
+				graph_.add((s, p, o))
+				# 以n3格式存储
+				graph_.serialize(file, format='n3')
+
+
+
 
 	def saveGraphNT(self, file, subjects, predicates, objects):
 		graph_ = rdflib.Graph()
@@ -48,8 +76,6 @@ class converte(object):
 			p = rdflib.URIRef("http://www.zhutong.com/knowledge_graph/vocab/" + i)
 			o = rdflib.URIRef(j)
 			graph_.add((s, p, o))
-		# 以n3格式存储
-		# 默认以'xml'格式存储
 		graph_.serialize(file, format='nt')
 
 	def parseGraph(self, file, graph_format):
@@ -95,8 +121,20 @@ class converte(object):
 if __name__ == "__main__":
 	# instantiate class
 	converter = converte()
+	converter.show(converter.parseGraph('../test/data/zhutong.rdf','n3'))
 	# converter.xml2nt("../test/data/musicknowledgegraph.rdf", "xml", "../test/data/musicknowledgegraph.nt", "nt")
-	converter.outputPredicateObjects("../test/data/musicknowledgegraph.rdf", "xml", "musicalbum/39375")
+	# converter.outputPredicateObjects("../test/data/musicknowledgegraph.rdf", "xml", "musicalbum/39375")
+
+
+	# graph = rdflib.Graph()
+    #
+	# s = rdflib.URIRef('牛膝')
+	# p = rdflib.URIRef('功效属性')
+	# o = rdflib.URIRef('活血')
+    #
+	# graph.add((s, p, o))
+	# # 以n3格式存储
+	# graph.serialize('../test/data/zhutong.rdf', format='n3')
 
 	# predicates = ['song_lyric', 'song_id', 'song_recommends', 'song_sub_title', 'song_comments'
 	# 	, 'song_original_name', 'label', 'song_name']

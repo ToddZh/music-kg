@@ -38,16 +38,66 @@ def baidubaike_download(target, type):
     if response.status_code != 200:
         return None
     soup = BeautifulSoup(response.text, 'html.parser')
+    data = []
+
     try:
-        if type == 'artist':
-            data = get_artist(soup)
-        elif type == 'album':
-            data = get_album(soup)
-        elif type == 'music':
-            data = get_music(soup)
+        meaning = soup.find('ul', class_='polysemantList-wrapper cmn-clearfix')
+        if meaning == None:
+            if type == 'artist':
+                data.append(get_artist(soup))
+            elif type == 'album':
+                data.append(get_album(soup))
+            elif type == 'music':
+                data.append(get_music(soup))
+            else:
+                pass
+            return data
         else:
-            return not None
-        return data
+            meanings = meaning.findAll('li', class_='item')
+
+            for i in range(len(meanings)):
+                link = meanings[i]['href']
+                title = meanings[i].text
+
+                if type == 'artist':
+                    if title.find('歌手') or title.find('演员')or title.find('音乐人') or title.find('团体') or title.find('组合') or title.find('乐队')or title.find('乐团'):
+                        if link=='':
+                            url = "https://baike.baidu.com/item/" + target
+                        else:
+                            url = link
+                        response = requests.get(url, headers=headers, timeout=10)
+                        response.encoding = 'utf-8'
+                        if response.status_code != 200:
+                            return None
+                        soup = BeautifulSoup(response.text, 'html.parser')
+                        data = get_artist(soup)
+                elif type == 'album':
+                    if title.find('专辑'):
+                        if link=='':
+                            url = "https://baike.baidu.com/item/" + target
+                        else:
+                            url = link
+                        response = requests.get(url, headers=headers, timeout=10)
+                        response.encoding = 'utf-8'
+                        if response.status_code != 200:
+                            return None
+                        soup = BeautifulSoup(response.text, 'html.parser')
+                        data.append(get_album(soup))
+                elif type == 'music':
+                    if title.find('民谣') or title.find('歌曲')or title.find('主题曲') or title.find('插曲') or title.find('单曲') or title.find('收录曲')or title.find('乐团'):
+                        if link=='':
+                            url = "https://baike.baidu.com/item/" + target
+                        else:
+                            url = link
+                        response = requests.get(url, headers=headers, timeout=10)
+                        response.encoding = 'utf-8'
+                        if response.status_code != 200:
+                            return None
+                        soup = BeautifulSoup(response.text, 'html.parser')
+                        data.append(get_music(soup))
+                else:
+                    continue
+            return data
     except:
         return not None
 
@@ -91,33 +141,33 @@ def get_artist(soup):
         basic_node[name] = value
 
     # 专辑
-    music_album_node = []
-    music_album = soup.findAll('li', class_='album-item')
-    if music_album == []:
-        music_album_table = soup.find('table', class_='musicAlbum-table')
-        for row in music_album_table.findAll("td", class_='with-padding'):
-            # print(row)
-            album = row.text.strip('\n')
-            music_album_node.append(album)
-            save_as_json.save_entity_album(album)
-    else:
-        for j in music_album:
-            album_name = j.text.split('\n')
-            for i in album_name:
-                if i != '':
-                    try:
-                        int(i)
-                        continue
-                    except:
-                        music_album_node.append(i)
-                        save_as_json.save_entity_album(i)
+    # music_album_node = []
+    # music_album = soup.findAll('li', class_='album-item')
+    # if music_album == []:
+    #     music_album_table = soup.find('table', class_='musicAlbum-table')
+    #     for row in music_album_table.findAll("td", class_='with-padding'):
+    #         # print(row)
+    #         album = row.text.strip('\n')
+    #         music_album_node.append(album)
+    #         save_as_json.save_entity_album(album)
+    # else:
+    #     for j in music_album:
+    #         album_name = j.text.split('\n')
+    #         for i in album_name:
+    #             if i != '':
+    #                 try:
+    #                     int(i)
+    #                     continue
+    #                 except:
+    #                     music_album_node.append(i)
+    #                     save_as_json.save_entity_album(i)
 
     print(music_album_node)
     data_json = {
         'title_node': title_node,
         'introduction_node': introduction_node,
-        'basic_node': basic_node,
-        'music_album_node': music_album_node
+        'basic_node': basic_node
+        # 'music_album_node': music_album_node
     }
     return data_json
 
@@ -160,19 +210,19 @@ def get_album(soup):
         basic_node[name] = value
 
     # 专辑歌曲
-    music_node = []
-    music_table = soup.find('table', class_='table-view log-set-param')
-    for row in music_table.findAll("tr"):
-        cells = row.findAll("td")
-        if len(cells) >= 2 and cells[1] != None:
-            music = cells[1].text.strip('\n')
-            music_node.append(music)
-            save_as_json.save_entity_music(music)
+    # music_node = []
+    # music_table = soup.find('table', class_='table-view log-set-param')
+    # for row in music_table.findAll("tr"):
+    #     cells = row.findAll("td")
+    #     if len(cells) >= 2 and cells[1] != None:
+    #         music = cells[1].text.strip('\n')
+    #         music_node.append(music)
+    #         save_as_json.save_entity_music(music)
     data_json = {
         'title_node': title_node,
         'introduction_node': introduction_node,
-        'basic_node': basic_node,
-        'music_node': music_node
+        'basic_node': basic_node
+        # 'music_node': music_node
     }
     return data_json
 
@@ -214,28 +264,28 @@ def get_music(soup):
             value = j.text[1:-1]
         basic_node[name] = value
     # 歌词信息
-    music_title = soup.findAll('div')
-    music_lyric_node = ""
-    lyric_begin = False
-    message1 = title_node.text + "歌曲鉴赏"
-    message2 = title_node.text + "歌曲歌词"
-    for i in  range(len(music_title)):
-        value = music_title[i].text.replace('\n','')
-        if value.find(message1) >=0 and len(value) < 50 :
-            break
-        if lyric_begin == True:
-            para = value
-            music_lyric_node += " " + para
-        if value.find(message2) >= 0 and len(value) < 50 :
-            lyric_begin = True
-    print (music_lyric_node)
+    # music_title = soup.findAll('div')
+    # music_lyric_node = ""
+    # lyric_begin = False
+    # message1 = title_node.text + "歌曲鉴赏"
+    # message2 = title_node.text + "歌曲歌词"
+    # for i in  range(len(music_title)):
+    #     value = music_title[i].text.replace('\n','')
+    #     if value.find(message1) >=0 and len(value) < 50 :
+    #         break
+    #     if lyric_begin == True:
+    #         para = value
+    #         music_lyric_node += " " + para
+    #     if value.find(message2) >= 0 and len(value) < 50 :
+    #         lyric_begin = True
+    # print (music_lyric_node)
 
     # music_lyric_node = basic_lyric.findAll('div', class_='para').text
     data_json = {
         'title_node': title_node.text,
         'introduction_node': introduction_node,
-        'basic_node': basic_node,
-        'music_lyric_node': music_lyric_node
+        'basic_node': basic_node
+        # 'music_lyric_node': music_lyric_node
     }
     return data_json
 

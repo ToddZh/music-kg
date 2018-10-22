@@ -1,0 +1,1074 @@
+@prefix ns1: <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/13-14> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/3440039> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/Apamgha> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/35249831> ;
+    ns1:歌曲 ns1:Apamgha .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/BULLSHIT> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/35331643> ;
+    ns1:歌曲 ns1:BULLSHIT .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/Bay(Remix)> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/34704332> ;
+    ns1:歌曲 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/Bay(Remix)> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/Ezitku> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/34871533> ;
+    ns1:歌曲 ns1:Ezitku .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/FISHPOND> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/73609421> ;
+    ns1:歌曲 ns1:FISHPOND .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/Gang> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/34847262> ;
+    ns1:歌曲 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/GANG!> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/I...Do> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/5847> ;
+    ns1:歌曲 ns1:I...Do,
+        ns1:一天天一点点,
+        ns1:下雪,
+        ns1:如果你爱我是因为我爱你,
+        ns1:抬起头,
+        ns1:有你才完整,
+        ns1:相信我可以,
+        ns1:睡不着,
+        ns1:西出阳关,
+        ns1:这首歌是谁写的 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/一诺千年> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/35422087> ;
+    ns1:歌曲 ns1:一诺千年 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/为爱投降> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/36304269> ;
+    ns1:歌曲 ns1:为爱投降 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/哈啰> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/5854> ;
+    ns1:歌曲 ns1:下雨的时候会想你,
+        ns1:哈啰,
+        ns1:走向前,
+        ns1:退让 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/差一点> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/3169187> ;
+    ns1:歌曲 ns1:不让你走,
+        ns1:你说,
+        ns1:单向的爱,
+        ns1:差一点,
+        ns1:新家,
+        ns1:沉默,
+        ns1:爱上谁,
+        ns1:狂野,
+        ns1:逃离,
+        ns1:黑夜之后 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/撒野> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/5835> ;
+    ns1:歌曲 ns1:不让你走,
+        ns1:你说,
+        ns1:单向的爱,
+        ns1:差一点,
+        ns1:撒野,
+        ns1:新家,
+        ns1:沉默,
+        ns1:爱上谁,
+        ns1:逃离,
+        ns1:黑夜以后 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/没什么好怕> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/5827> ;
+    ns1:歌曲 ns1:人狼,
+        ns1:听见牛在哭,
+        ns1:夜游,
+        ns1:完美英雄,
+        ns1:想家,
+        ns1:我在你的爱情之外,
+        ns1:没什么好怕,
+        ns1:痕迹,
+        ns1:还你自由 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/烂好人> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/35450297> ;
+    ns1:歌曲 ns1:烂好人 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/爱就是你> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/36950192> ;
+    ns1:歌曲 ns1:爱就是你 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/第9次初恋> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/5819> ;
+    ns1:歌曲 ns1:不提,
+        ns1:再唱一首,
+        ns1:几年了,
+        ns1:宠爱,
+        ns1:左心房,
+        ns1:挂失,
+        ns1:离开我的自由,
+        ns1:第九次初恋 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/被忘路> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/73877595> ;
+    ns1:歌曲 ns1:被忘路 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/醇情歌> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/5850> ;
+    ns1:歌曲 ns1:Andy,
+        ns1:一个人住,
+        ns1:一首情歌,
+        ns1:下雨的时候会想你,
+        ns1:他一定很爱你,
+        ns1:你就像个小孩,
+        ns1:坚持到底,
+        ns1:天天看到你,
+        ns1:天涯海角,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/天黑(弦乐版)>,
+        ns1:小说,
+        ns1:撕夜,
+        ns1:爱字怎么写,
+        ns1:爱就是你,
+        ns1:祝你快乐,
+        ns1:离别,
+        ns1:认真,
+        ns1:走向前 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/专辑/门后> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/72015037> ;
+    ns1:歌曲 ns1:门后 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌手/AThree-Arslan> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/1087200> ;
+    ns1:专辑 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/13-14>,
+        ns1:Apamgha,
+        ns1:BULLSHIT,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/Bay(Remix)>,
+        ns1:Ezitku,
+        ns1:FISHPOND,
+        ns1:Gang .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌手/阿杜> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/1876> ;
+    ns1:专辑 ns1:I...Do,
+        ns1:一诺千年,
+        ns1:为爱投降,
+        ns1:哈啰,
+        ns1:差一点,
+        ns1:撒野,
+        ns1:没什么好怕,
+        ns1:烂好人,
+        ns1:爱就是你,
+        ns1:第9次初恋,
+        ns1:被忘路,
+        ns1:醇情歌,
+        ns1:门后 .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/Andy> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60183> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/Apamgha> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/464072955> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/BULLSHIT> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/469817189> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/Bay(Remix)> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/413829713> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/100165.rdf> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/Ezitku> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/430053119> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/FISHPOND> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/1313717641> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/GANG!> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/427016516> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/I...Do> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60103> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/一个人住> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60174> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/一天天一点点> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60117> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/一诺千年> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/473742237> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/一首情歌> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60142> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/下雨的时候会想你> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60176>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60210> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/下雪> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60108> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/就快要下雪
+心开始凝结
+该怎么迎接
+我们最后一个圣诞夜
+我害怕下雪
+爱将会冻结
+因为你说过
+雪让人有等待的感觉
+说好两颗心要乘着雪
+相约在那拥抱的季节
+冬天来的太狼狈
+爽约了诺言
+白茫茫的世界碎成雪
+所有快乐都已流成泪
+而我一个人面对
+整夜的心碎
+终于在下雪
+意味着离别
+我心头的雪
+不知还要多久才溶解
+说好两颗心要乘着雪
+相约在那拥抱的季节
+冬天来的太狼狈
+爽约了诺言
+白茫茫的世界碎成雪
+所有快乐都已流成泪
+而我一个人面对
+整夜的心碎
+
+白茫茫的世界碎成雪
+所有快乐都已流成泪
+而我一个人面对
+整夜的心碎> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/不提> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59890> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/不让你走> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682101>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60032> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/看着你哭得累了慢慢睡去
+他还在门外坚持不肯离去
+我能陪你挺你甚至为你出气
+就是没拥抱的权力
+不想再帮你劝你送你回去
+我真的觉得自己傻得可以
+我对你的感觉
+已经不能再压抑
+决定不再让你为爱
+流一颗泪滴
+我不要再让你走
+我不要再为爱情低着头
+他已失去所有值得你爱
+的理由
+我不要再让你走
+就在他面前握紧你的手
+带你回到你最快乐的时候
+不想再帮你劝你送你回去
+我真的觉得自己傻得可以
+我对你的感觉
+已经不能再压抑
+决定不再让你为爱
+流一颗泪滴
+我不要再让你走
+我不要再为爱情低着头
+他已失去所有值得你爱
+的理由
+我不要再让你走
+就在他面前握紧你的手
+带你回到你最快乐的时候
+同情他当初温柔对你
+可是今天都不再有
+你还要骗自己多久
+爱已蛀成伤口
+我不要再让你走
+我不要再为爱情低着头
+他已失去所有值得你爱
+的理由
+我不要再让你走
+就在他面前握紧你的手
+带你回到你最快乐的时候
+带你回到你最快乐的时候> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/为爱投降> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/508297601> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/人狼> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59914> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/他一定很爱你> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60154> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/你就像个小孩> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60160> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/你说> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682103>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60039> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/你说
+演唱阿杜
+制作as8683
+你说我从来不会多想
+你说我每年都一样
+以为这对我是个夸奖
+一直到离开的那一晚
+我想这世界一直在转
+我想快转回你身旁
+可是我得到一间空房
+有你睡过的那张床
+时间说生活
+应该一直都是这样
+可是你说
+你没说的正是心中的绝望
+时间说原谅
+也许能让人挽回一场
+可是你说
+因为爱我的梦让你受伤
+我想这世界一直在转
+我想快转回你身旁
+可是我得到一间空房
+有你睡过的那张床
+时间说生活
+应该一直都是这样
+可是你说
+你没说的正是心中的绝望
+时间说原谅
+也许能让人挽回一场
+可是你说
+因为爱我的梦让你受伤
+时间说生活
+不能有太多的渴望
+可是你说
+你没说的还是心中的绝望
+时间说遗忘
+让我醒过来像梦一场
+可是你说
+因为做我的梦你才受伤
+制作as8683>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/你说我从来不会多想
+你说我每年都一样
+以为这对我是个夸奖
+一直到离开的那一晚
+我想这世界一直在转
+我想快转回你身旁
+可是我得到一间空房
+有你睡过的那张床
+时间说 生活
+应该一直都是这样
+可是 你说
+你没说的正是心中的绝望
+时间说 原谅
+也许能让人挽回一场
+可是 你说
+因为爱我的梦让你受伤
+
+我想这世界一直在转
+我想快转回你身旁
+可是我得到一间空房
+有你睡过的那张床
+时间说 生活
+应该一直都是这样
+可是 你说
+你没说的正是心中的绝望
+时间说 原谅
+也许能让人挽回一场
+可是 你说
+因为爱我的梦让你受伤
+
+时间说 生活
+不能有太多的渴望
+可是 你说
+你没说的还是心中的绝望
+时间说 遗忘
+让我醒过来像梦一场
+可是 你说
+因为做我的梦你才受伤> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/再唱一首> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59877> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/几年了> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59870> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/单向的爱> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682097>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60018> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/冰块溶化要等多久
+双手温度都冷了
+沉默了一个小时又一分钟
+空气窒息在空中
+心情被心冷冻
+你又再喝了一杯酒
+这一次你想哭了吗
+坚持了一小时又一分钟
+眼泪被锁在眼中
+连我都感觉到疼痛
+单向的爱情混乱两人的世界
+你爱他他爱她谁爱我
+我在你心中总是路过
+连作梦都嫌太沉重
+单向的爱情注定两人的暧昧
+雨是雨或是泪又如何
+别想太多我至少爱过
+你幸福就足够
+你又再喝了一杯酒
+这一次你想哭了吗
+坚持了一小时又一分钟
+眼泪被锁在眼中
+连我都感觉到疼痛
+单向的爱情混乱两人的世界
+你爱他他爱她谁爱我
+我在你心中总是路过
+连作梦都嫌太沉重
+单向的爱情注定两人的暧昧
+雨是雨或是泪又如何
+别想太多我至少爱过
+你幸福就足够单向的爱情
+注定两人的暧昧
+雨是雨或是泪又如何
+别想太多我至少爱过
+你幸福就足够
+别想太多我至少爱过
+你幸福就足够> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/听见牛在哭> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59909> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/哈啰> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60208> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/坚持到底> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60172> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/夜游> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59932> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/仓惶过夜 门前 少了 你穿的鞋
+拼命点烟
+男人脸上的雨
+滋味和泪一样咸
+我从没发现
+
+说 掰掰的 我却放不下 依然牵挂
+不知检点
+整夜 心有家不回
+幸福的人 哪懂 夜有多危险
+
+OH~我已爱了你好久
+徘徊在夜游的路口 不走
+心再怕黑 也不走
+我怕你 突然回头
+怎么能 放弃爱你
+
+街灯熄灭 你在怀里 从没吻别
+别说再见
+换上白天的脸
+受的伤就看不见
+我多会表演
+
+是 不爱的 我却反而更 放心里面
+人多犯贱
+仿佛 爱上了失眠
+彻夜不归 躲在 昨夜的缠绵
+
+OH~我已爱了你好久
+徘徊在夜游的路口 不走
+心再怕黑 也不走
+我怕你 突然回头
+怎么能 放弃爱你
+
+BABY BABY BABY
+
+最亲爱的 爱到最后却最是遥远
+熄掉了烟
+我在夜里的脸
+得面对多少思念 只要你能了解
+
+说了再见 其实只想见你一面
+黎明好远
+所以 我只能失眠
+彻夜不归 夜游 在你的身边
+
+我已 爱上了 你好久
+徘徊在夜游的路口 不走
+
+等你再久 也不走
+分手 不是理由
+怎么能 放弃爱你
+等你再久 我也不会走
+心再怕黑 我也不会走
+怎能放弃爱你
+我一爱上你是永久> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/天天看到你> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60187> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/天涯海角> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60148> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/天涯海角
+是否能收藏烦恼
+我很想逃跑
+我的心谁能知道
+爱我就好
+能有多少就多少
+也别让我骄傲
+因为我知道
+随时都会散了
+天涯的边
+会有怎样的世界
+海角的夜
+会有怎样的思念
+那双哭过的眼睛
+那些哭过的恋人
+什么结果
+才有幸福可言
+爱我就好
+能有多少就多少
+也别让我骄傲
+因为我知道
+随时都会散了
+天涯的边
+会有怎样的世界
+海角的夜
+会有怎样的思念
+那双哭过的眼睛
+那些哭过的恋人
+什么结果
+才有幸福可言
+天涯的边
+会有怎样的世界
+海角的夜
+会有怎样的思念
+那双哭过的眼睛
+那些哭过的恋人
+什么结果
+才有幸福可言
+爱我就好
+能有多少就多少
+也别让我骄傲
+因为我知道
+随时都会散了> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/天黑(弦乐版)> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60179> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/风若停了云要怎么飞
+你若走了我要怎么睡
+
+心若破了你要怎么赔
+若非你只是贪玩的蝴蝶
+
+天都黑了你在想着谁
+情都灭了我要怎么追
+花都缩了你要怎么退
+原来你只会让我流眼泪
+
+整个世界突然一起天黑
+
+爱在眼前无声崩溃
+
+摔成粉碎
+
+我闭上眼睛就是天黑
+一种撕裂的感觉
+嘴里泛着血腥滋味
+
+多么伤的离别
+
+我承认我最害怕天黑
+梦被掏空的错觉
+
+我已不再是你的谁
+想到就（都）会心碎
+
+天都黑了你在想着谁
+
+情都灭了我要怎么追
+花都缩了你要怎么退
+原来你只会让我流眼泪
+
+我闭上眼睛就是天黑
+一种撕裂的感觉
+嘴里泛着血腥滋味
+多么伤的离别
+我承认我最害怕天黑
+梦被掏空的错觉
+
+我已不再是你的谁
+想到就（都）会心碎
+
+风若停了云要怎么飞
+你若走了我要怎么睡
+心若破了你要怎么赔> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/如果你爱我是因为我爱你> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60128> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/完美英雄> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59917> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/宠爱> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59884> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/小说> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60157> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/左心房> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59897> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/差一点> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682095>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60012> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/阿杜-差一点
+差一点你就是我的女人
+差一些手牵手的完整
+却在对的时间错过对的人
+抓不住幸福时分
+遇上了错的人
+渐渐的吻在她无心的嘴唇
+感觉像一个旅程
+走完了就分
+错过了对的人
+决定就只在那一秒那一分
+爱情的岔口
+你是我等不到的路人
+差一点你就是我的女人
+差一些就和你共度一生
+因为对的时间对的人
+就值得我为你奋不顾身
+差一点你就是我的女人
+差一些手牵手的完整
+却在对的时间错过对的人
+抓不住幸福时分
+错过了对的人
+决定就只在那一秒那一分
+如果没缘分
+我也会固执的为你一人
+差一点你就是我的女人
+差一些就和你共度一生
+因为对的时间对的人
+就值得我为你奋不顾身
+差一点你就是我的女人
+差一些手牵手的完整
+却在对的时间错过对的人
+抓不住幸福时分> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/想家> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59928> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/漫无目的地走着
+人来人往的马路上
+万家灯火像星星在闪
+我却像在人间蒸发
+肩膀上的重量
+儿提时的梦想
+酝酿成一脸沧桑
+想念汇集成一面海洋
+而我却靠不了岸
+我真的好想回家
+回到最初单纯的模样
+不想在人前苦苦逞强
+不想戴着面具说着谎
+不想苟且偷生
+怎么今天我会变成这样荒唐
+你的爱让我变得勇敢
+双脚踏过泥泞的土壤
+终于回答温暖的港湾
+相信黑夜过后
+我又看见清晨另一道的曙光> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/我在你的爱情之外> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59936> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/抬起头> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60126> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/挂失> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59899> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/撒野> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60010> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/撕夜> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60169> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/新家> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682098>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60021> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/新家
+演唱阿杜
+制作as8683
+天堂的家什么样
+是不是都长了翅膀
+风暴将临带我们逃
+我们用爱打造
+原谅过往再拥抱希望
+紧紧拥抱我们的新家
+家是每个小孩的梦想
+泪和汗流过的胸膛
+爱一块一块的砌上
+装上门窗迎接阳光
+家是每个心灵的天堂
+伤痛了逃回的方向
+爱一天一天的茁壮
+家就是天堂
+天堂的家什么样
+是不是都长了翅膀
+风暴将临带我们逃
+我们用爱打造
+原谅过往再拥抱希望
+紧紧拥抱我们的新家
+家是每个小孩的梦想
+泪和汗流过的胸膛
+爱一块一块的砌上
+装上门窗迎接阳光
+家是每个心灵的天堂
+伤痛了逃回的方向
+爱一天一天的茁壮
+家就是天堂
+家是每个小孩的梦想
+泪和汗流过的胸膛
+爱一块一块的砌上
+装上门窗迎接阳光
+家是每个心灵的天堂
+伤痛了逃回的方向
+爱一天一天的茁壮
+家就是天堂
+制作as8683> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/有你才完整> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60120> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/海连着天远远将你载过来
+期待的眼
+因为你而亮了起来
+胡姬花浓郁的香味
+溶成了心中难言滋味
+无论远方你眷着谁
+留连着不回
+勿忘年少的热泪
+因为我单纯小世界
+原来有你才完整
+胡姬花在风中飘多远
+是我散落一路思念
+飘飘荡荡经历一切
+只要有你我才完整
+就算海再远
+天把我们相连
+风中你听得见我思念
+胡姬花浓郁的香味
+溶成了心中难言滋味
+无论远方你眷着谁
+留连着不回
+勿忘年少的热泪
+因为我单纯小世界
+原来有你才完整
+胡姬花在风中飘多远
+是我散落一路思念
+飘飘荡荡经历一切
+只要有你我才完整
+就算海再远
+天把我们相连
+风中你听得见我思念
+因为我单纯小世界
+原来有你才完整
+胡姬花在风中飘多远
+是我散落一路思念
+飘飘荡荡经历一切
+只要有你我才完整
+就算海再远
+天把我们相连
+风中你听得见我思念> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/沉默> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682100>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60028> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/沉默
+演唱阿杜
+制作as8683
+我们早就一无所有你要什么
+撑开的手裂缝太多被爱穿透
+风不再哭泣
+因为哭也没什么意义
+世界沉默了我
+掏心掏肺情掏梦掏给你
+不需要道理
+所有的勇气都是因为有你
+逃心逃醉逃爱逃你逃自己
+就承认脆弱的是我
+才在你流泪时沉默
+我们虽然一无所求平凡生活
+无奈蜚言流语太多左右你我
+梦不再甜蜜
+因为梦醒后满眼空虚
+未来沉没了我
+掏心掏肺情掏梦掏给你
+不需要道理
+所有的勇气都是因为有你
+逃心逃醉逃爱逃你逃自己
+就承认脆弱的是我
+才在你流泪时沉默
+掏心掏肺情掏梦掏给你
+不需要道理
+所有的勇气都是因为有你
+逃心逃醉逃爱逃你逃自己
+就承认脆弱的是我
+才在你流泪时沉默
+制作as8683> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/没什么好怕> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59912> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/烂好人> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/476254045> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/爱上谁> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682096>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60014> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌手罗灯乾
+
+
+贵州省-仁怀市
+雨冰冷的雨
+洗不掉你的泪水
+我无措的我
+只能看着你枯萎
+伤害安慰
+还有我对你的心碎
+太傻太乱太过疲惫
+我无法说服你
+也无法改变你爱上谁
+只是看着盼望着是场错oh~~
+天无法告诉我
+也无法改变我去爱谁
+只能这样
+让雨水稀释了痛的感觉
+雨冰冷的雨
+洗不掉你的泪水
+我无措的我
+只能看着你枯萎
+伤害安慰
+还有我对你的心碎
+太傻太乱太过疲惫
+我无法说服你
+也无法改变你爱上谁
+只是看着盼望着是场错oh~~
+天无法告诉我
+也无法改变我去爱谁
+只能这样
+让雨水稀释了痛的感觉
+我无法说服你
+也无法改变你爱上谁
+只是看着盼望着是场错oh~~
+天无法告诉我
+也无法改变我去爱谁
+只能这样
+让雨水稀释了痛的感觉
+我无法说服你
+也无法改变你爱上谁
+天无法告诉我
+也无法改变我去爱谁
+只能这样
+让雨水稀释了痛的感觉
+~~end~~> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/爱字怎么写> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60145> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/爱就是你> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/523248485>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/523250505> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/狂野> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682094> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/痕迹> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59924> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/相信我可以> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60130> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/睡不着> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60112> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/躺在床上对着风扇
+外面太阳很晒
+汗湿了床单
+
+热得快疯掉
+爬不起来头昏脑胀
+分手后的病态
+没有你的下午
+
+懒得不像话
+我看到你在天花板
+眨了眨双眼热得我发烫
+睡不着香水的味道
+亲吻和拥抱通通都不在
+床在摇世界颠倒了
+跳过的绵羊变你模样
+睡不着回忆在发酵
+你有多么好现在才知道
+真渴望翻身你就在身旁
+紧紧抱你睡着
+
+爬不起来头昏脑胀
+分手后的病态
+没有你的下午
+
+懒得不像话
+我看到你在天花板
+眨了眨双眼热得我发烫
+睡不着香水的味道
+亲吻和拥抱通通都不在
+床在摇世界颠倒了
+跳过的绵羊变你模样
+睡不着回忆在发酵
+你有多么好现在才知道
+真渴望翻身你就在身旁
+我睡不着
+我睡不着
+
+我看到你在天花板
+眨了眨双眼热得我发烫
+
+睡不着香水的味道
+亲吻和拥抱通通都不在
+床在摇世界颠倒了
+跳过的绵羊变你模样
+睡不着回忆在发酵
+你有多么好现在才知道
+真渴望翻身你就在身旁
+我睡不着
+睡不着香水的味道
+亲吻和拥抱通通都不在
+床在摇世界颠倒了
+跳过的绵羊变你模样
+睡不着回忆在发酵
+你有多么好现在才知道
+真渴望翻身你就在身旁
+紧紧抱你睡着> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/祝你快乐> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60191> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/离别> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60163> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/离开我的自由> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59887> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/第九次初恋> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59880> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/被忘路> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/1318687121> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/西出阳关> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60123> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/决定出去闯一闯
+我有点感伤
+
+说不怕那是逞强
+说怕又不像
+
+听说外面的世界
+现在不一样
+
+开了门出了关
+
+我要去飞翔
+
+梦像杯酒
+冷暧要自已尝
+
+干完这杯
+我就要降落在没有你的地方
+
+在风沙里空流转
+
+才懂知心有多难
+
+可以互相壮胆
+一起呐喊
+在人海中共一条船
+什么都不必讲
+
+我重重拍了你肩膀
+
+不枉相识一场
+西出阳关
+我不会把故人遗忘
+
+梦像杯酒
+冷暧要自已尝
+
+干完这杯
+我就要降落在没有你的地方
+在风沙里空流转
+
+才懂知心有多难
+
+可以互相壮胆
+一起呐喊
+在人海中共一条船
+什么都不必讲
+
+我重重拍了你肩膀
+
+不枉相识一场
+西出阳关
+
+我不会把故人遗忘
+
+在风沙里空流转
+
+才懂知心有多难
+
+可以互相壮胆
+一起呐喊
+在人海中共一条船
+
+什么都不必讲
+
+我重重拍了你肩膀
+
+不枉相识一场
+西出阳关
+我不会把故人遗忘
+
+管他黄沙漫漫
+西出阳关
+我不会把故人遗忘> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/认真> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60151> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/在说到他的时候
+就像夜里点起灯火
+你的眉头不再深锁
+呼吸突然加紧节奏
+
+在出现他了以后
+杜鹃开的满山红火
+而你像熟透了的苹果
+感觉可以随时为他掉落
+越来越醉越来越美
+越来越当他就是谁
+我想我到底该算什么
+
+我认真的说认真的做
+认真的活认真的错
+犯错的不是你
+只是我拆不开
+这情感的包裹
+认真的说认真的做
+认真的活认真的错
+看不清的是我
+已抓不定
+在什么时候放开手
+
+在说到他的时候
+就像夜里点起灯火
+你的眉头不再深锁
+呼吸突然加紧节奏
+
+在出现他了以后
+杜鹃开的满山红火
+而你像熟透了的苹果
+感觉可以随时为他掉落
+越来越醉越来越美
+越来越当他就是谁
+我想我到底该算什么
+
+我认真的说认真的做
+认真的活认真的错
+犯错的不是你
+只是我拆不开
+这情感的包裹
+认真的说认真的做
+认真的活认真的错
+看不清的是我
+已抓不定
+在什么时候放开手
+
+当我们在混乱中发觉
+彼此没有多少空间后悔
+怎么爱到这样不进不退
+认真也有错
+我认真的说认真的做
+认真的活认真的错
+犯错的不是你
+只是我拆不开
+这情感的包裹
+认真的说认真的做
+认真的活认真的错
+看不清的是我
+已抓不定
+在什么时候放开手> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/走向前> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60166>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60212> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/还你自由> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/59920> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/这首歌是谁写的> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60132> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/逃离> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682102>,
+        <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/60035> ;
+    ns1:歌词 <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/逃离
+演唱阿杜
+
+回忆从前感觉好远
+逃离终点还是那天
+我沉默不语你就像过去
+叫人不敢眷恋
+转眼我头也不回没说再见
+给我真情的拥抱
+但别问我好不好
+我们早习惯沉默相依靠到老
+给我真情的围绕
+红着的眼里有笑
+我们都知道这次你和我不再逃
+太阳在天边汗水流成线
+早已忘了眼泪
+那些以为的未来能不能实现
+选择逃避谁错谁对
+是否还是那么绝对
+谁又能为我解开心中迷惑
+给我真情的拥抱
+但别问我好不好
+我们早习惯沉默相依靠到老
+给我真情的围绕
+红着的眼里有笑
+我们都知道这次你和我不再逃
+给我真情的拥抱
+但别问我好不好
+我们早习惯沉默相依靠到老
+给我真情的围绕
+我知道我忘不掉
+就算再逃也要追到天荒地老
+制作as8683> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/门后> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/1297532537> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/黑夜之后> ns1:id <file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/32682099> .
+
+<file:///D:/Code/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/music-kg/test/data/歌曲/黑夜以后> ns1:id <file:///

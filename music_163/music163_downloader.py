@@ -5,8 +5,11 @@
 import requests
 from bs4 import BeautifulSoup
 import time
+import json
+import re
 from music_163 import save_as_json
 from kg import insert_to_neo4j
+from convert import converter
 
 class Music(object):
     headers = {
@@ -23,6 +26,10 @@ class Music(object):
         'Upgrade-Insecure-Requests': '1',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
     }
+    def __init__(self):
+        self.graph_ = insert_to_neo4j.GraphNeo4j()
+        self.converter_ = converter.converte()
+
 
     def save_artist(self, group_id, initial):
         params = {'id': group_id, 'initial': initial}
@@ -33,17 +40,18 @@ class Music(object):
 
         hot_artists = soup.find_all('a', attrs={'class': 'msk'})
         artists = body.find_all('a', attrs={'class': 'nm nm-icn f-thide s-fc0'})
-
-        graph = insert_to_neo4j.GraphNeo4j()
-
-        for artist in hot_artists + artists:
+        save_id = str(group_id) + str(initial)
+        # for artist in hot_artists + artists:
+        for artist in hot_artists:
             artist_id = artist['href'].replace('/artist?id=', '').strip()
             artist_name = artist['title'].replace('的音乐', '')
             try:
                 # 根据 artist_id 与 artist_name 进行专辑爬取
                 data = artist_id + "$$" + artist_name
                 save_as_json.save_entity(data, '../test/data/entity_artist.txt')
-                graph.driver_add_properties(artist_name, "歌手", {"id":artist_id}, [])
+                self.graph_.driver_add_properties_id(artist_name, "歌手", {"id":artist_id}, [])
+                self.converter_.saveGraphN3("../test/data/"+save_id+".rdf", "歌手/" + artist_name,'id',artist_id)
+                self.save_albums(artist_id, artist_name, save_id)
             except Exception as e:
                 # 打印错误日志
                 print(e)
@@ -51,7 +59,7 @@ class Music(object):
 
 
 
-    def save_albums(self, artist_id, artist_name):
+    def save_albums(self, artist_id, artist_name, save_id):
         params = {'id': artist_id, 'limit': '200'}
         # 获取歌手个人主页
         r = requests.get('http://music.163.com/artist/album', headers=self.headers, params=params)
@@ -65,13 +73,16 @@ class Music(object):
             data = artist_name + "$$" + albume_id + "$$" + albums_name
             try:
                 save_as_json.save_entity(data, '../test/data/entity_album.txt')
-                graph.driver_add_properties(albums_name, "专辑", {"id": albume_id}, [])
-                graph.driver_add_relation(artist_name, "歌手", "专辑", albums_name, "专辑")
+                self.graph_.driver_add_properties_id(albums_name, "专辑", {"id": albume_id}, [])
+                self.graph_.driver_add_relation_id(artist_id, artist_name, "歌手", "专辑", albume_id, albums_name, "专辑")
+                self.converter_.saveGraphN3("../test/data/"+save_id+".rdf", "歌手/" + artist_name,'专辑',albums_name)
+                self.converter_.saveGraphN3("../test/data/"+save_id+".rdf", "专辑/" + albums_name,'id',albume_id)
+                self.save_music(albume_id, albums_name, save_id)
             except Exception as e:
                 # 打印错误日志
                 print(e)
 
-    def save_music(self, album_id, albums_name):
+    def save_music(self, album_id, albums_name, save_id):
         params = {'id': album_id}
         # 获取专辑对应的页面
         r = requests.get('http://music.163.com/album', headers=self.headers, params=params)
@@ -87,13 +98,42 @@ class Music(object):
             data = albums_name + "$$" + music_id + "$$" + music_name
             try:
                 save_as_json.save_entity(data, '../test/data/entity_music.txt')
-                graph.driver_add_properties(albums_name, "专辑", {"id": albume_id}, [])
-                graph.driver_add_relation(artist_name, "歌手", "专辑", albums_name, "专辑")
+                self.graph_.driver_add_properties_id(music_name, "歌曲", {"id": music_id}, [])
+                self.graph_.driver_add_relation_id(album_id, albums_name, "专辑", "歌曲", music_id, music_name, "歌曲")
+                self.converter_.saveGraphN3("../test/data/"+save_id+".rdf", "专辑/" + albums_name,'歌曲',music_name)
+                self.converter_.saveGraphN3("../test/data/"+save_id+".rdf", "歌曲/" + music_name,'id',music_id)
+                self.save_lyric(music_id, music_name, save_id)
             except Exception as e:
                 # 打印错误日志
                 print(e)
 
+    def save_lyric(self, music_id, music_name, save_id):
+        # 获取歌词，链接为网易云音乐API
+        url = 'http://music.163.com/api/song/lyric?' + 'id=' + str(music_id) + '&lv=1&kv=1&tv=1'
+        try:
+            response = requests.get(url, headers=self.headers)
+            html = response.text
+        except:
+            print('request error')
+        # 载入json数据
+        json_obj = json.loads(html)
+        # 匹配Json字段
+        initial_lyric = json_obj['lrc']['lyric']
+        # 正则匹配时间字符串
+        regex = re.compile(r'\[.*\]')
+        # 正则替换时间字符串
+        final_lyric = re.sub(regex, '', initial_lyric).strip()
 
+        data = music_name + "$$" + final_lyric
+        try:
+            save_as_json.save_entity(data, '../test/data/entity_lyric.txt')
+            self.graph_.driver_add_properties(music_name, "歌曲", {"id": music_id}, [])
+            self.graph_.driver_add_properties(music_name, "歌曲", {"歌词": final_lyric}, [])
+            self.converter_.saveGraphN3("../test/data/"+save_id+".rdf", "歌曲/" + music_name,'歌词',final_lyric)
+            # self.save_music(albume_id, albums_name, save_id)
+        except Exception as e:
+            # 打印错误日志
+            print(e)
 
 if __name__ == '__main__':
     id_range = [1001, 1002, 1003]
@@ -101,4 +141,5 @@ if __name__ == '__main__':
     for i in range(65, 91):
         for j in id_range:
             music.save_artist(j, i)
-
+    # music = Music()
+    # music.save_lyric(573426358,'Are You Ready (Live)',1)
